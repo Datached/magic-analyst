@@ -18,3 +18,9 @@ def download(line):
 def eda(line):
     csv_agent = create_csv_agent(llm, line, verbose=True)
     csv_agent.run("Write a detailed exploratory data analysis for this dataset")
+
+
+def load_ipython_extension(ipython):
+    ipython.register_magic_function(search, 'line')
+    ipython.register_magic_function(download, 'line')
+    ipython.register_magic_function(eda, 'line')
