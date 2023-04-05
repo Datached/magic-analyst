@@ -45,19 +45,17 @@ Here&apos;s an example of how to use the extension:
 
 %search "fifa"
 
-"""
-[
-abecklas/fifa-world-cup,
-...
-...
-]
-"""
+
+# [
+# abecklas/fifa-world-cup,
+# ...
+# ...
+# ]
+
 
 %download "abecklas/fifa-world-cup"
 
-"""
-The dataset abecklas/fifa-world-cup has been downloaded and extracted to /content/fifa-world-cup.
-"""
+# The dataset abecklas/fifa-world-cup has been downloaded and extracted to /content/fifa-world-cup.
 ```
 
 
