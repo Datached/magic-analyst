@@ -11,6 +11,19 @@ To install the extension, run:
 pip install 
 ```
 
+You must authenticate using Kaggle’s public API. To obtain your Kaggle configuration file, visit [Kaggle](https://www.kaggle.com/me/account) and select the “Create New API Token” option to download the file.
+
+Next, create a directory in your root folder called `.kaggle`. 
+```shell
+mkdir ~/.kaggle
+```
+
+Move the downloaded configuration file to the new directory, and change the permission using the command below.
+```shell
+mv kaggle.json ~/.kaggle
+chmod 600 ~/.kaggle/kaggle.json
+```
+
 
 ## Usage
 
