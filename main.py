@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from kaggle.api.kaggle_api_extended import KaggleApi
 from langchain.agents import initialize_agent, Tool
 from langchain.llms import OpenAI
+import getpass
 
 load_dotenv()
 
@@ -15,8 +16,11 @@ class Kaggle:
         self.kaggle = KaggleApi()
         self.kaggle.authenticate()
         self.path = os.getcwd()
-        # self.openai = os.getenv("OPEN_AI_KEY") if os.getenv("OPEN_AI_KEY") else input("Enter your OpenAI Keys")
-        self.folder = None
+        self.openai = (
+            os.getenv("OPEN_AI_KEY")
+            if os.getenv("OPEN_AI_KEY")
+            else getpass.getpass("Enter your OpenAI Key:")
+        )
 
     def search(self, query):
         return self.kaggle.dataset_list(search=query)
@@ -28,7 +32,6 @@ class Kaggle:
                 folder_name = dataset.split("/")[1]
 
             path = os.path.join(self.path, folder_name)
-            self.folder = folder_name
             self.kaggle.dataset_download_files(dataset, path)
             return path
         except (ValueError, IndexError) as e:
@@ -78,11 +81,6 @@ tools = [
     ),
 ]
 
-llm = OpenAI(temperature=0, openai_api_key=os.getenv("OPEN_AI_KEY"))
+llm = OpenAI(temperature=0, openai_api_key=kaggle.openai)
 
 agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
-
-if __name__ == "__main__":
-    agent.run(
-        "Download abecklas/fifa-world-cup and extract and create dataframes from it"
-    )

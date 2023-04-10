@@ -11,7 +11,11 @@ def search(line):
 
 @register_line_magic
 def download(line):
-    agent.run("Download {dataset} and extract it".format(dataset=line))
+    agent.run(
+        "Download {dataset} and extract and create dataframes from it".format(
+            dataset=line
+        )
+    )
 
 
 @register_line_magic
