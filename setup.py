@@ -1,9 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="magic-analyst",
+    name="magic_analyst",
     version="0.1.0",
     author="David Okpare",
+    author_email='okparedave@gmail.com',
     description="IPython extension for data analysis on datasets from Kaggle",
     long_description="IPython extension that allows searching, downloading, extracting and performing EDA on datasets "
     "from Kaggle",
@@ -17,5 +18,8 @@ setup(
         "openai==0.27.4",
         "jupyter",
         "python-dotenv==1.0.0",
+        "SQLAlchemy==1.4.47",
+        "pandas==2.0.0"
+
     ],
 )
