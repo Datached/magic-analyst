@@ -4,11 +4,14 @@ This is an ipython extension that allows you to search and download datasets fro
 
 ## Installation
 
-To install the extension, run:
+To install the extension, you first need to clone the repo:
 
-
+```commandline
+git clone https://github.com/DaveOkpare/magic-analyst.git
+```
+Then run the command below
 ```python 
-pip install 
+pip install .
 ```
 
 You must authenticate using Kaggle’s public API. To obtain your Kaggle configuration file, visit [Kaggle](https://www.kaggle.com/me/account) and select the “Create New API Token” option to download the file.
