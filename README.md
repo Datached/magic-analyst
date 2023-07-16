@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="magicanalyst.png" height="150" width="150" alt="logo">
+  <img src="magicanalyst.gif" height="150" width="150" alt="logo">
 </p>
 
 <p align="center">
