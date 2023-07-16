@@ -1,4 +1,14 @@
-# Kaggle Datasets Extension
+<p align="center">
+  <img src="magicanalyst.png" height="150" width="150" alt="logo">
+</p>
+
+<p align="center">
+    <b>magic analyst - an IPython extension</b> <br /> that produces Python code from natural language descriptions using LLMs.
+</p>
+
+<h1 align="center"></h1>
+
+
 
 This is an ipython extension that allows you to search and download datasets from Kaggle.
 
